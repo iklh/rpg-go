@@ -10,5 +10,4 @@ archives:
       - goos: windows
         format: zip
     files:
-      - rpg
-      - rpg.exe
+      - 
