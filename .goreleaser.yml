@@ -10,4 +10,5 @@ archives:
       - goos: windows
         format: zip
     files:
-      - 
+      - dst: CHANGELOG.md
+        strip_parent: true
