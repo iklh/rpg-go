@@ -5,7 +5,7 @@ builds:
 
 archives:
   -
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch | replace '386' 'i386' }}"
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ if eq .Arch '386' }}i386{{ else }}{{ .Arch }}{{ end }}"
     format_overrides:
       - goos: windows
         format: zip
