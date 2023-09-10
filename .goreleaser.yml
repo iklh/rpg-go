@@ -1,10 +1,18 @@
 builds:
-  - main: rpg.go
+  - 
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - "386"
+      - "amd64"
+    main: rpg.go
     binary: rpg
 
 archives:
   -
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ if eq .Arch "386" }}i386{{ else }}{{ .Arch }}{{ end }}"
     format_overrides:
       - goos: windows
         format: zip
