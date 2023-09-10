@@ -1,12 +1,5 @@
 builds:
   - 
-    goos:
-      - darwin
-      - linux
-      - windows
-    goarch:
-      - "386"
-      - "amd64"
     main: rpg.go
     binary: rpg
 
@@ -15,3 +8,5 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - rpg*
